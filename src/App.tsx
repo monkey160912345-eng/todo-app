@@ -81,31 +81,31 @@ export default function App() {
           </p>
         </header>
 
-        <form onSubmit={addTodo} className="cute-card p-8 mb-12 animate-slide-up-cute space-y-4">
-          <div className="flex gap-4">
-            <div className="flex-1">
-              <label className="block text-sm font-bold text-dream-navy/40 mb-2 ml-4 uppercase tracking-widest">무엇을 할까요?</label>
+        <form onSubmit={addTodo} className="cute-card p-6 md:p-8 mb-12 animate-slide-up-cute space-y-6">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-1 w-full">
+              <label className="block text-xs md:text-sm font-bold text-dream-navy/40 mb-2 ml-4 uppercase tracking-widest">무엇을 할까요?</label>
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="내일의 일과를 적어보세요..."
-                className="w-full cute-input py-4 text-lg"
+                className="w-full cute-input"
               />
             </div>
-            <div className="w-32">
-              <label className="block text-sm font-bold text-dream-navy/40 mb-2 ml-4 uppercase tracking-widest">언제?</label>
+            <div className="w-full md:w-40">
+              <label className="block text-xs md:text-sm font-bold text-dream-navy/40 mb-2 ml-4 uppercase tracking-widest">언제?</label>
               <input
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full cute-input py-4 text-lg px-4"
+                className="w-full cute-input"
               />
             </div>
           </div>
           <button
             type="submit"
-            className="w-full cute-button py-5 text-xl flex items-center justify-center gap-2 group"
+            className="w-full cute-button text-lg md:text-xl flex items-center justify-center gap-2 group"
           >
             <Plus size={28} strokeWidth={3} className="group-hover:rotate-90 transition-transform" />
             <span>내일 계획에 추가하기</span>
@@ -124,8 +124,8 @@ export default function App() {
                 key={todo.id}
                 style={{ animationDelay: `${index * 100}ms` }}
                 className={`group flex items-center justify-between p-6 cute-card transition-all duration-500 animate-slide-up-cute hover:-rotate-1 ${todo.completed
-                    ? 'opacity-50 grayscale scale-[0.98]'
-                    : 'hover:border-dream-peach/40'
+                  ? 'opacity-50 grayscale scale-[0.98]'
+                  : 'hover:border-dream-peach/40'
                   }`}
               >
                 <div className="flex items-center gap-6 flex-1">
@@ -143,16 +143,16 @@ export default function App() {
                     <button
                       onClick={() => toggleTodo(todo.id)}
                       className={`size-8 rounded-2xl flex items-center justify-center transition-all duration-300 ${todo.completed
-                          ? 'bg-dream-mint text-emerald-600 rotate-12'
-                          : 'bg-slate-100 text-slate-300 hover:text-dream-peach hover:bg-dream-cream animate-pulse'
+                        ? 'bg-dream-mint text-emerald-600 rotate-12'
+                        : 'bg-slate-100 text-slate-300 hover:text-dream-peach hover:bg-dream-cream animate-pulse'
                         }`}
                     >
                       {todo.completed ? <CheckCircle2 size={24} strokeWidth={3} /> : <Circle size={24} strokeWidth={3} />}
                     </button>
                     <span
                       className={`text-xl font-cute transition-all duration-500 ${todo.completed
-                          ? 'text-slate-400 line-through'
-                          : 'text-dream-navy font-bold'
+                        ? 'text-slate-400 line-through'
+                        : 'text-dream-navy font-bold'
                         }`}
                     >
                       {todo.text}

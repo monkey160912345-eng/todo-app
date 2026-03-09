@@ -67,13 +67,13 @@
       }
       @layer utilities {
         .cute-card {
-          @apply bg-white/70 backdrop-blur-md border-4 border-white rounded-[2.5rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)];
+          @apply bg-white/70 backdrop-blur-md border-[3px] md:border-4 border-white rounded-[2rem] md:rounded-[2.5rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)];
         }
         .cute-input {
-          @apply bg-white/90 border-4 border-transparent focus:border-dream-peach rounded-[2rem] px-8 py-5 text-xl outline-none transition-all placeholder:text-slate-300;
+          @apply bg-white/90 border-2 md:border-4 border-transparent focus:border-dream-peach rounded-[1.5rem] md:rounded-[2rem] px-4 md:px-8 py-3 md:py-5 text-lg md:text-xl outline-none transition-all placeholder:text-slate-300;
         }
         .cute-button {
-          @apply bg-dream-peach hover:bg-dream-peach/80 text-white font-bold rounded-[1.5rem] shadow-lg shadow-dream-peach/30 transition-all hover:scale-105 active:scale-95;
+          @apply bg-dream-peach hover:bg-dream-peach/80 text-white font-bold rounded-[1.2rem] md:rounded-[1.5rem] shadow-lg shadow-dream-peach/30 transition-all hover:scale-105 active:scale-95 px-6 py-4 md:py-5;
         }
         .pill-tag {
           @apply px-4 py-1.5 rounded-full text-sm font-bold bg-white/50 text-dream-navy/60;
